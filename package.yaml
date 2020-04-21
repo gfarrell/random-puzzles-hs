@@ -1,0 +1,31 @@
+name:                random-puzzles
+version:             0.0.1.0
+github:              "gfarrell/random-puzzles-hs"
+license:             BSD3
+author:              "Gideon Farrell"
+maintainer:          "gideon@gtf.io"
+copyright:           "2020 Gideon Farrell"
+
+extra-source-files:
+- README.md
+
+description: Some random puzzles, please see README.md for more info.
+
+dependencies:
+- base >= 4.7 && < 5
+- hspec
+
+library:
+  source-dirs: src
+
+tests:
+  random-puzzles-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - random-puzzles
+    - hspec

@@ -1,0 +1,52 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.31.2.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: c859fb1f6e7586fbe476ebb5c5dae77c7f4b3e4da6213b8a75d3031d3aea29e5
+
+name:           random-puzzles
+version:        0.0.1.0
+description:    Some random puzzles, please see README.md for more info.
+homepage:       https://github.com/gfarrell/random-puzzles-hs#readme
+bug-reports:    https://github.com/gfarrell/random-puzzles-hs/issues
+author:         Gideon Farrell
+maintainer:     gideon@gtf.io
+copyright:      2020 Gideon Farrell
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+
+source-repository head
+  type: git
+  location: https://github.com/gfarrell/random-puzzles-hs
+
+library
+  exposed-modules:
+      Rectangles
+  other-modules:
+      Paths_random_puzzles
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.7 && <5
+    , hspec
+  default-language: Haskell2010
+
+test-suite random-puzzles-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      RectanglesSpec
+      Paths_random_puzzles
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , hspec
+    , random-puzzles
+  default-language: Haskell2010
